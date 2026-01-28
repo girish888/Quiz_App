@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Quiz Application</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<div class="container" id="startScreen">
+    <h1>Dynamic Quiz Application</h1>
+
+    <label>Category:</label>
+    <select id="category">
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+    </select>
+
+    <label>Difficulty:</label>
+    <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<div class="container hidden" id="quizScreen">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p>Time Left: <span id="timer">10</span> sec</p>
+    <button onclick="nextQuestion()">Next</button>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>

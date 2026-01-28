@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>Quiz Result Analysis</h2>
+<p id="score"></p>
+<canvas id="timeChart"></canvas>
+
+<script>
+    let score = localStorage.getItem("score");
+    let timeSpent = JSON.parse(localStorage.getItem("timeSpent"));
+
+    document.getElementById("score").innerText =
+        `Score: ${score}`;
+
+    new Chart(document.getElementById("timeChart"), {
+        type: 'bar',
+        data: {
+            labels: timeSpent.map((_, i) => `Q${i+1}`),
+            datasets: [{
+                label: 'Time Spent (sec)',
+                data: timeSpent
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>
